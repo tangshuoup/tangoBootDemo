@@ -1,20 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { name } = require("./package.json");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
-    // 微前端支持
-    // library: `example-[name]`,
-    // libraryTarget: 'umd',
-    // jsonpFunction: `webpackJsonp_example`,
+    library: name,
+    libraryTarget: 'umd',
+    chunkLoadingGlobal: `webpackJsonp_${name}`,
+    publicPath: `/${name}/`,
   },
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
+    port:8008,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -42,8 +42,9 @@ module.exports = {
   },
   externals: {
     react: "React",
+    antd: "antd",
     "react-dom": "ReactDOM",
-    moment: "moment",
+    'dayjs': "dayjs",
     "styled-components": "styled",
     "@music163/tango-boot": "TangoBoot",
     "@mijastudio/antd": "MijaStudioAntd",
@@ -51,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "webpack example",
+      title: "Tango App",
       template: "index.html",
       inject: "body",
     }),
