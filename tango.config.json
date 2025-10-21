@@ -1,0 +1,70 @@
+{
+  "designerConfig": {
+    "autoGenerateComponentId": true
+  },
+  "packages": {
+    "react": {
+      "version": "17.0.2",
+      "library": "React",
+      "type": "dependency",
+      "resources": [
+        "https://unpkg.com/react@{{version}}/umd/react.development.js"
+      ]
+    },
+    "react-dom": {
+      "version": "17.0.2",
+      "library": "ReactDOM",
+      "type": "dependency",
+      "resources": [
+        "https://unpkg.com/react-dom@{{version}}/umd/react-dom.development.js"
+      ]
+    },
+    "react-is": {
+      "version": "16.13.1",
+      "library": "ReactIs",
+      "type": "dependency",
+      "resources": [
+        "https://unpkg.com/react-is@{{version}}/umd/react-is.production.min.js"
+      ]
+    },
+    "styled-components": {
+      "version": "5.3.5",
+      "library": "styled",
+      "type": "dependency",
+      "resources": [
+        "https://unpkg.com/styled-components@{{version}}/dist/styled-components.min.js"
+      ]
+    },
+    "moment": {
+      "version": "2.29.4",
+      "library": "moment",
+      "type": "dependency",
+      "resources": ["https://unpkg.com/moment@{{version}}/moment.js"]
+    },
+    "@music163/tango-boot": {
+      "description": "云音乐低代码运行时框架",
+      "version": "0.3.5",
+      "library": "TangoBoot",
+      "type": "baseDependency",
+      "resources": [
+        "https://unpkg.com/@music163/tango-boot@{{version}}/dist/boot.js"
+      ]
+    },
+    "@mijastudio/antd": {
+      "description": "mijastudio中后台应用基础物料",
+      "version": "1.0.0-beta.3",
+      "library": "MijaStudioAntd",
+      "type": "baseDependency",
+      "resources": ["https://local.netease.com:9002/index.js"],
+      "designerResources": ["https://local.netease.com:9002/designer.js"]
+    },
+    "@mijastudio/pro-components": {
+      "description": "mijastudio中后台应用业务组件物料",
+      "version": "1.0.0-beta.2",
+      "library": "MijaStudioPro",
+      "type": "baseDependency",
+      "resources": ["https://local.netease.com:9003/index.js"],
+      "designerResources": ["https://local.netease.com:9003/designer.js"]
+    }
+  }
+}
