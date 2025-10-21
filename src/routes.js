@@ -1,16 +1,10 @@
-import Index from './pages/index';
-import Fun from './pages/fun';
+import Index from "./pages/index";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     exact: true,
     component: Index,
-  },
-  {
-    path: '/fun',
-    exact: true,
-    component: Fun,
   },
 ];
 
