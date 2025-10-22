@@ -8,13 +8,13 @@ module.exports = {
     library: name,
     libraryTarget: 'umd',
     chunkLoadingGlobal: `webpackJsonp_${name}`,
-    publicPath: `/${name}/`,
+    globalObject: 'window',
+    publicPath: `/${name}`,
   },
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
-    static: "./dist",
-    port:8008,
+    port: 8008,
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
@@ -38,6 +38,14 @@ module.exports = {
         test: /\.html$/,
         loader: "html-loader",
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+      }
     ],
   },
   externals: {
@@ -46,9 +54,9 @@ module.exports = {
     "react-dom": "ReactDOM",
     'dayjs': "dayjs",
     "styled-components": "styled",
-    "@music163/tango-boot": "TangoBoot",
-    "@mijastudio/antd": "MijaStudioAntd",
-    "@mijastudio/pro-components": "MijaStudioPro",
+    // "@music163/tango-boot": "TangoBoot",
+    // "@mijastudio/antd": "MijaStudioAntd",
+    // "@mijastudio/pro-components": "MijaStudioPro",
   },
   plugins: [
     new HtmlWebpackPlugin({

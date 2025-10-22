@@ -5,36 +5,54 @@ import './stores';
 import './services';
 const { name } = require("../package.json");
 
-function render(props) {
-  const { container } = props;
-  runApp({
-    boot: {
-      mountElement: container ? container.querySelector('#root') : document.querySelector('#root'),
-      qiankun: {
-        appName: name
-      },
+const { bootstrap, mount, unmount } = runApp({
+  boot: {
+    mountElement: document.querySelector('#root'),
+    qiankun: {
+      appName: name
     },
-    router: {
-      type: 'browser',
-      config: routes,
-      basename: `/${name}`
-    },
-  });
-}
+  },
+  router: {
+    type: 'browser',
+    config: routes,
+    basename: `/${name}/`
+  },
+});
 
-if (!window.__POWERED_BY_QIANKUN__) {
-  render({});
-}
+export { bootstrap, mount, unmount };
 
-export function bootstrap() {
-  console.log('tango app bootstrap');
-}
 
-export function mount(props) {
-  console.log('tango app from main framework', props);
-  render(props);
-}
+// function render(props) {
+//   const { container, setLoading } = props;
+//   runApp({
+//     boot: {
+//       mountElement: container ? container.querySelector('#root') : document.querySelector('#root'),
+//       qiankun: {
+//         appName: name
+//       },
+//     },
+//     router: {
+//       type: 'browser',
+//       config: routes,
+//       basename: `/${name}`
+//     },
+//   });
+//   setLoading?.(false)
+// }
 
-export function unmount() {
-  console.log('tango app unmount');
-}
+// if (!window.__POWERED_BY_QIANKUN__) {
+//   render({});
+// }
+
+// export async function bootstrap() {
+//   console.log('tango app bootstrap');
+// }
+
+// export async function mount(props) {
+//   console.log('tango app from main framework', props);
+//   render(props);
+// }
+
+// export async function unmount() {
+//   console.log('tango app unmount');
+// }
