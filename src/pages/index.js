@@ -2,7 +2,6 @@ import React from "react";
 import { definePage } from "@music163/tango-boot";
 import { Section } from "@mijastudio/antd";
 import { ProTable } from "@mijastudio/pro-components";
-
 const App = () => {
   return (
     <Section tid="section0">
@@ -30,9 +29,9 @@ const App = () => {
             hideInSearch: false,
           },
         ]}
+        toolBarOptions={false}
       />
     </Section>
   );
 };
-
 export default definePage(App);

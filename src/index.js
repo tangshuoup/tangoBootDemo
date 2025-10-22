@@ -1,23 +1,25 @@
-import './public-path';
-import { runApp } from '@music163/tango-boot';
-import routes from './routes';
-import './stores';
-import './services';
+import "./public-path";
+import { runApp } from "@music163/tango-boot";
+import routes from "./routes";
+import "./stores";
+import "./services";
 const { name } = require("../package.json");
 
 function render(props) {
   const { container } = props;
   runApp({
     boot: {
-      mountElement: container ? container.querySelector('#root') : document.querySelector('#root'),
+      mountElement: container
+        ? container.querySelector("#root")
+        : document.querySelector("#root"),
       qiankun: {
-        appName: name
+        appName: name,
       },
     },
     router: {
-      type: 'browser',
+      type: "browser",
       config: routes,
-      basename: `/${name}`
+      basename: `/${name}`,
     },
   });
 }
@@ -27,14 +29,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export function bootstrap() {
-  console.log('tango app bootstrap');
+  console.log("tango app bootstrap");
 }
 
 export function mount(props) {
-  console.log('tango app from main framework', props);
+  console.log("tango app from main framework", props);
   render(props);
 }
 
 export function unmount() {
-  console.log('tango app unmount');
+  console.log("tango app unmount");
 }

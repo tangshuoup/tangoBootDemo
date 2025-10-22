@@ -1,10 +1,10 @@
-import { defineStore } from '@music163/tango-boot';
+import { defineStore } from "@music163/tango-boot";
 
 defineStore(
   {
     list: {},
 
-    image: '',
+    image: "",
 
     async listAllBreeds() {
       const ret = await tango.services.list();
@@ -20,5 +20,5 @@ defineStore(
       this.image = ret.message;
     },
   },
-  'dogs',
+  "dogs"
 );

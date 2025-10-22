@@ -1,4 +1,4 @@
-import { defineStore } from '@music163/tango-boot';
+import { defineStore } from "@music163/tango-boot";
 
 defineStore(
   {
@@ -12,5 +12,5 @@ defineStore(
       this.number--;
     },
   },
-  'counter',
+  "counter"
 );
