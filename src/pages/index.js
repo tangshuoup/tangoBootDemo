@@ -1,7 +1,6 @@
-import React from "react";
-import { definePage } from "@music163/tango-boot";
-import { Section, Space } from "@mijastudio/antd";
-import { ProTable } from "@mijastudio/pro-components";
+import tango, { definePage } from "@mijadesign/tango-boot";
+import { Section, Button } from "@mijadesign/tango-antd";
+import { ProTable } from "@mijadesign/tango-pro";
 const App = () => {
   return (
     <Section tid="section0">
@@ -28,23 +27,7 @@ const App = () => {
             key: "address",
             hideInSearch: false,
           },
-          {
-            key: "action",
-            dataIndex: "action",
-            title: "操作",
-            render: (value, record, index) => {
-              return (
-                <Space>
-                  <Button type="link">编辑</Button>
-                  <Button type="link" danger>
-                    删除
-                  </Button>
-                </Space>
-              );
-            },
-          },
         ]}
-        toolBarOptions={false}
       />
     </Section>
   );

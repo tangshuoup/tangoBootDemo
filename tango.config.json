@@ -35,36 +35,61 @@
         "https://unpkg.com/styled-components@{{version}}/dist/styled-components.min.js"
       ]
     },
-    "moment": {
-      "version": "2.29.4",
-      "library": "moment",
-      "type": "dependency",
-      "resources": ["https://unpkg.com/moment@{{version}}/moment.js"]
+    "dayjs": {
+      "description": "dayjs",
+      "version": "1.11.13",
+      "library": "dayjs",
+      "type": "baseDependency",
+      "resources": ["https://unpkg.com/dayjs@{{version}}/dayjs.min.js"]
     },
-    "@music163/tango-boot": {
+    "antd": {
+      "description": "antd",
+      "version": "5.21.6",
+      "library": "antd",
+      "type": "baseDependency",
+      "resources": ["https://unpkg.com/antd@{{version}}/dist/antd.min.js"]
+    },
+    "@mijadesign/web": {
       "description": "云音乐低代码运行时框架",
-      "version": "0.3.5",
+      "version": "1.0.8",
+      "library": "MijaDesignWeb",
+      "type": "baseDependency",
+      "resources": [
+        "https://unpkg.com/@mijadesign/web@{{version}}/umd/web.min.js"
+      ]
+    },
+    "@mijadesign/tango-boot": {
+      "description": "云音乐低代码运行时框架",
+      "version": "0.0.2",
       "library": "TangoBoot",
       "type": "baseDependency",
       "resources": [
-        "https://unpkg.com/@music163/tango-boot@{{version}}/dist/boot.js"
+        "https://unpkg.com/@mijadesign/tango-boot@{{version}}/dist/boot.js"
       ]
     },
-    "@mijastudio/antd": {
-      "description": "mijastudio中后台应用基础物料",
-      "version": "1.0.0-beta.3",
-      "library": "MijaStudioAntd",
+    "@mijadesign/tango-antd": {
+      "description": "@mija/tango中后台应用基础物料",
+      "version": "0.0.3",
+      "library": "TangoAntd",
       "type": "baseDependency",
-      "resources": ["https://local.netease.com:9002/index.js"],
-      "designerResources": ["https://local.netease.com:9002/designer.js"]
+      "resources": [
+        "https://unpkg.com/@mijadesign/tango-antd@{{version}}/dist/index.js"
+      ],
+      "designerResources": [
+        "https://unpkg.com/@mijadesign/tango-antd@{{version}}/dist/designer.js"
+      ]
     },
-    "@mijastudio/pro-components": {
-      "description": "mijastudio中后台应用业务组件物料",
-      "version": "1.0.0-beta.2",
-      "library": "MijaStudioPro",
+    "@mijadesign/tango-pro": {
+      "description": "@mija/tango中后台应用业务组件物料",
+      "version": "0.0.3",
+      "library": "TangoPro",
       "type": "baseDependency",
-      "resources": ["https://local.netease.com:9003/index.js"],
-      "designerResources": ["https://local.netease.com:9003/designer.js"]
+      "resources": [
+        "https://unpkg.com/@mijadesign/tango-pro@{{version}}/dist/index.js"
+      ],
+      "designerResources": [
+        "https://unpkg.com/@mijadesign/tango-pro@{{version}}/dist/designer.js"
+      ]
     }
   }
 }

@@ -1,4 +1,4 @@
-import { defineStore } from "@music163/tango-boot";
+import { defineStore } from "@mijadesign/tango-boot";
 
 defineStore(
   {
